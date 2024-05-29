@@ -1,0 +1,12 @@
+<!-- hospital/templates/hospital/doctor_form.html -->
+
+{% extends 'hospital/base.html' %}
+
+{% block content %}
+    <h2>{{ form.instance.pk|yesno:"Update Doctor,Add New Doctor" }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

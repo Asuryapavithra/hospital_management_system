@@ -1,0 +1,13 @@
+<!-- hospital/templates/hospital/patient_confirm_delete.html -->
+
+{% extends 'hospital/base.html' %}
+
+{% block content %}
+    <h2>Delete Patient</h2>
+    <p>Are you sure you want to delete {{ patient.name }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'patient_list' %}">Cancel</a>
+{% endblock %}
